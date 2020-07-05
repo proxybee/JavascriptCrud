@@ -209,7 +209,7 @@ form input, #gender {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 90%;
   margin: 5%;
 }
 
@@ -224,12 +224,12 @@ tr th {
   background-color: #dddddd;
 }
 
-tr th:nth-child(1) {
-  width:25%;
+tr th {
+  width:fit-content;
 }
 
 tr th:nth-child(2) {
-  width:30%;
+  width:20%;
 }
 tr th:nth-child(3) {
   width:15%;

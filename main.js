@@ -21,14 +21,12 @@ function checkValue() {
 
 
 function checkedit () {
-    recent.addEventListener('click', () => {
-        if(recent.checked){
-            recent.uncheck
-        }
-        if (recent.uncheck) {
-        recent.checked
-        }
-    });  
+    if(recent.value=="Yes") {
+        return recent.checked = true
+    } else {
+        return recent.checked = false
+    } 
+     
 }
 
 function readFormData() {
@@ -69,12 +67,14 @@ function resetForm() {
 
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
+    checkedit()
     document.getElementById("submit").value = "Update";
     document.getElementById("firstName").value = selectedRow.cells[0].childNodes[0].innerHTML;
     document.getElementById("lastName").value = selectedRow.cells[0].childNodes[2].innerHTML;
     document.getElementById("email").value = selectedRow.cells[1].innerHTML;
     document.getElementById("gender").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("yesRecently").value = selectedRow.cells[3];
+    document.getElementById("yesRecently").value = selectedRow.cells[3].innerHTML;
+    console.log("hejej", recent.value, selectedRow.cells[3], checkedit())
 }
 function updateRecord(formData) {
     document.getElementById("submit").value = "Submit";
